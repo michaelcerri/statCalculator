@@ -108,11 +108,11 @@ public class statCalculator {
 			this.BB = bb;
 		}
 
-		//start stat calculations
+		//start stat calculations. cast to double
 		public double battingAverage() {
 			return ((double)H)/AB;	
 		}
-		//also includes hit by pitch which isn't accounted for here- making answer slightly different from real
+		//also should include hit by pitch which isn't accounted for here- making answer slightly different from real
 		public double onBasePercentage() {
 			return ((double)BB+H)/(AB+BB);
 		}
@@ -131,9 +131,12 @@ public class statCalculator {
 		
 		
 		public static void main(String[] args) {
+			//found this online to go to 3 decimal places
 			DecimalFormat df = new DecimalFormat("#.###");
+			//instantiate, will prompt user w/ scanner 
 			statCalculator RuthStat= new statCalculator();
 			
+			//display stats
 			System.out.println("Here are "+playerName+"'s stats:");
 			System.out.println("Batting Average: "+df.format(RuthStat.battingAverage()));
 			System.out.println("On-Base Percentage: "+df.format(RuthStat.onBasePercentage()));
